@@ -27,27 +27,9 @@ class ItemRepositoryMock(IItemRepository):
         self.items[item_id] = item
         return item
     
-    def delete_item(self, item_id: int) -> Item:
-        item = self.items.pop(item_id, None)
-        return item
-        
-        
-    def update_item(self, item_id:int, name:str=None, price:float=None, item_type:ItemTypeEnum=None, admin_permission:bool=None) -> Item:
-        item = self.items.get(item_id, None)
-        if item is None:
-            return None
-        
-        if name is not None:
-            item.name = name
-        if price is not None:
-            item.price = price
-        if item_type is not None:
-            item.item_type = item_type
-        if admin_permission is not None:
-            item.admin_permission = admin_permission
-        self.items[item_id] = item
-        
-        return item
+    # Vamos criar um metodo para deletar o item, garantindo que ele exista e seja um booleano
+
+    # Vamos criar um metodo para atualizar o item, garantindo que ele exista e seja um booleano
         
     
     
